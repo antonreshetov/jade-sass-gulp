@@ -63,10 +63,11 @@ gulp.task('jade', function(){
 
 // Js
 gulp.task('jsConcat', ['jsMain'], function() {
-  return gulp.src('./src/assets/js/lib/*.js')
+  return gulp.src('./src/assets/js/**/*.js')
     .pipe(order([
       "src/assets/js/lib/jquery-1.11.2.min.js",
-      "src/assets/js/lib/*.js"
+      "src/assets/js/lib/*.js",
+      "src/assets/js/lib/vendor/*.js"
     ],{ base: './' }))
     .pipe(concat("bundle.js"))
     .pipe(gulp.dest('app/assets/js'))
