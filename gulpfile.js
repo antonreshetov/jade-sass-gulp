@@ -6,12 +6,13 @@ var jade         = require('gulp-jade');
 var watch        = require('gulp-watch');
 var useref       = require('gulp-useref');
 var clean        = require('gulp-clean');
-var merge        = require('gulp-merge');
 var jshint       = require('gulp-jshint');
 var uglify       = require('gulp-uglify');
 var rename       = require("gulp-rename");
 var concat       = require("gulp-concat");
 var order        = require("gulp-order");
+var merge        = require('merge-stream');
+var htmlpretty   = require('gulp-prettify');
 
 // Browser Sync
 gulp.task('browserSync', function() {
@@ -61,6 +62,13 @@ gulp.task('jade', function(){
     .pipe(browserSync.reload({stream:true}));
 });
 
+// HTML Prettify
+gulp.task('htmlpretty', function() {
+  gulp.src('app/**/*.html')
+    .pipe(htmlpretty({indent_size: 2, wrap_line_length: 0}))
+    .pipe(gulp.dest('app'));
+});
+
 // Js
 gulp.task('jsConcat', ['jsMain'], function() {
   return gulp.src('./src/assets/js/**/*.js')
@@ -85,7 +93,8 @@ gulp.task('jsMain',function(){
     .pipe(rename({
       suffix: '.min'
       }))
-    .pipe(gulp.dest('app/assets/js'));
+    .pipe(gulp.dest('app/assets/js'))
+    .pipe(browserSync.reload({stream:true}));
 });
 
 // JsHint

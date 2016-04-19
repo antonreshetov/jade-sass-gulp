@@ -5918,7 +5918,6 @@ function preCapt() {
 if (window.innerWidth > 500) {
     setTimeout(preCapt, 500);
 }
-
 /*----------------------------------*/
 /*  SLICK  */
 /*----------------------------------*/
@@ -5930,4 +5929,13 @@ $('.carousel').slick({
   nextArrow: '<div class="slick-next"></div>',
   prevArrow: '<div class="slick-prev"></div>',
 
+});
+/*----------------------------------*/
+/*  FANCYBOX  */
+/*----------------------------------*/
+$(document).ready(function() {
+  $(".fancybox").fancybox({
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
 });
