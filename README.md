@@ -1,7 +1,7 @@
 Jade Gulp StartKit
 =============================
 
-A StartKit including full setup for Jade, GulpJS, Sass, Autoprefix,  Useref to combine js files & BrowserSync.
+A StartKit including full setup for Jade, GulpJS, Sass, Autoprefix & BrowserSync.
 
 ## System Preparation
 
