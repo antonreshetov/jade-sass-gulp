@@ -7,6 +7,7 @@ Tools included:
 
 * [Kube](https://imperavi.com/kube/) - CSS Framework v5.0
 * [Flexiblegs](http://flexible.gs/) - Flexible Grid System v2.3.5
+* [FlexSlider](http://flexslider.woothemes.com/) - FlexSlider v2.6.0
 * [fancyBox](http://fancyapps.com/fancybox/) - fancyBox v2.1.5
 
 ## System Preparation
