@@ -1,4 +1,4 @@
-Jade Gulp StartKit
+Jade Gulp Sass StartKit
 =============================
 
 A StartKit including full setup for Jade, GulpJS, Sass, Autoprefix & BrowserSync.
