@@ -4,7 +4,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var browserSync  = require('browser-sync');
 var jade         = require('gulp-jade');
 var watch        = require('gulp-watch');
-var useref       = require('gulp-useref');
 var clean        = require('gulp-clean');
 var jshint       = require('gulp-jshint');
 var uglify       = require('gulp-uglify');
@@ -57,7 +56,6 @@ gulp.task('jade', function(){
     .pipe(jade({
       pretty: true
       }))
-    .pipe(useref())
     .pipe(gulp.dest('app'))
     .pipe(browserSync.reload({stream:true}));
 });
