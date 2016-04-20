@@ -69,7 +69,7 @@ gulp.task('htmlpretty', function() {
 
 // Js
 gulp.task('jsConcat', ['jsMain'], function() {
-  return gulp.src('./src/assets/js/**/*.js')
+  return gulp.src('./src/assets/js/lib/*.js')
     .pipe(order([
       "src/assets/js/lib/jquery-1.11.2.min.js",
       "src/assets/js/lib/*.js",
