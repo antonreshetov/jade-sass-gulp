@@ -3,6 +3,12 @@ Jade Gulp StartKit
 
 A StartKit including full setup for Jade, GulpJS, Sass, Autoprefix & BrowserSync.
 
+Tools included:
+
+* [Kube](https://imperavi.com/kube/) - CSS Framework v5.0
+* [Flexiblegs](http://flexible.gs/) - Flexible Grid System v2.3.5
+* [fancyBox](http://fancyapps.com/fancybox/) - fancyBox v2.1.5
+
 ## System Preparation
 
 To use this starter project, you'll need the following things installed on your machine.
