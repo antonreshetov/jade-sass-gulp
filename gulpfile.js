@@ -12,6 +12,13 @@ var concat       = require("gulp-concat");
 var order        = require("gulp-order");
 var merge        = require('merge-stream');
 var htmlpretty   = require('gulp-prettify');
+var notify       = require("gulp-notify");
+
+// Error Handler
+function swallowError (error) {
+  console.log(error.toString())
+  this.emit('end')
+}
 
 // Browser Sync
 gulp.task('browserSync', function() {
@@ -56,6 +63,11 @@ gulp.task('jade', function(){
     .pipe(jade({
       pretty: true
       }))
+    .on('error', swallowError)
+    .on('error', notify.onError({
+        message: 'Error: <%= error.message %>',
+        sound: "Basso"
+      }))
     .pipe(gulp.dest('app'))
     .pipe(browserSync.reload({stream:true}));
 });
@@ -88,6 +100,11 @@ gulp.task('jsMain',function(){
   return gulp.src('./src/assets/js/main.js')
     .pipe(gulp.dest('app/assets/js'))
     .pipe(uglify())
+    .on('error', swallowError)
+    .on('error', notify.onError({
+        message: 'Error: <%= error.message %>',
+        sound: "Basso"
+      }))
     .pipe(rename({
       suffix: '.min'
       }))
